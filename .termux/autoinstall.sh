@@ -26,16 +26,20 @@ gh auth login || error_exit "${RED}Failed to set up GitHub auth.${ENDCOLOR}"
 echo -e "${YELLOW}Time to set up your Git credentials!${ENDCOLOR}"
 
 # Prompt the user for their Git username
-read -rp "${GREEN}Enter your Git username${ENDCOLOR}: " username
+echo -ne "${GREEN}Enter your Git username${ENDCOLOR}: "
+read username
 
 # Prompt the user for their Git email
-read -rp "${GREEN}Enter your Git email${ENDCOLOR}: " email
+echo -ne "${GREEN}Enter your Git email${ENDCOLOR}: "
+read email
 
 # Prompt the user for the name associated with the SSH key
-read -rp "${GREEN}Enter a name you would like associated with the SSH key for easy recognition on GitHub (Title)${ENDCOLOR}: " key_title
+echo -ne "${GREEN}Enter a name you would like associated with the SSH key for easy recognition on GitHub (Title)${ENDCOLOR}: "
+read key_title
 
 # Prompt the user to choose between global and system-wide configuration
-read -rp "${GREEN}Would you like to set your Git configuration system-wide? (Yes/No)${ENDCOLOR}: " choice
+echo -ne "${GREEN}Would you like to set your Git configuration system-wide? (Yes/No)${ENDCOLOR}: "
+read choice
 
 # Set Up SSH Key
 if [ ! -f ~/.ssh/"$key_title" ]; then
