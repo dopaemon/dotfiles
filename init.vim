@@ -177,3 +177,12 @@ command! B wincmd j
 tnoremap <Esc> <C-\><C-n>
 
 tnoremap <C-r> <C-\><C-n><C-w>l
+
+" Mở NvimTree
+command! O NvimTreeOpen
+
+" Đóng NvimTree
+command! C NvimTreeClose
+
+" Nhấn Ctrl‑A để mở command-line mode
+nnoremap <C-a> :
